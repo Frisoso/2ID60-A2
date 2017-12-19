@@ -1,0 +1,1080 @@
+@charset "utf-8";
+
+
+
+/* Global Styles */
+
+:target {
+	background-color: #ffff66 !important;
+}
+
+body {
+
+	margin-left: auto;
+
+	margin-right: auto;
+
+	width: 92%;
+
+	max-width: 960px;
+
+	padding-left: 2.275%;
+
+	padding-right: 2.275%;
+
+}
+
+/* Header */
+
+header {
+
+	text-align: center;
+
+	display: block;
+
+}
+
+header .profileLogo .logoPlaceholder {
+
+	background-color: rgba(141,45,38,1.00);
+
+	width: 187px;
+
+	text-align: center;
+
+}
+
+header .logoPlaceholder span {
+
+	width: 80px;
+
+	height: 22px;
+
+	font-family: 'Montserrat', sans-serif;
+
+	color: rgba(255,255,255,1.00);
+
+	font-size: 30px;
+
+	font-weight: 700;
+
+	line-height: 53px;
+
+}
+
+header .profileHeader h1 {
+
+	font-family: 'Montserrat', sans-serif;
+
+	color: rgba(141,45,38,1.00);
+
+	font-size: 30px;
+
+	font-weight: 700;
+
+	line-height: 24px;
+
+}
+
+header .profileHeader h3 {
+
+	font-family: sans-serif;
+
+	color: rgba(146,146,146,1.00);
+
+	font-size: 16px;
+
+	font-weight: 700;
+
+	line-height: 24px;
+
+}
+
+hr {
+
+	background-color: rgba(208,207,207,1.00);
+
+	height: 1px;
+
+}
+
+header .profileHeader p {
+
+	font-family: sans-serif;
+
+	color: rgba(146,146,146,1.00);
+
+	font-size: 14px;
+
+	font-weight: 400;
+
+	line-height: 1.8;
+
+	overflow-y: auto;
+
+}
+
+header .socialNetworkNavBar {
+
+	text-align: center;
+
+	display: block;
+
+	margin-top: 60px;
+
+	clear: both;
+
+}
+
+header .socialNetworkNavBar .socialNetworkNav {
+
+	border-radius: 50%;
+
+	width: 100px;
+
+    height: 100px;
+
+    overflow: hidden;
+}
+
+header .socialNetworkNavBar .socialNetworkNav img {
+
+    height: inherit;
+
+	margin-left: auto;
+
+    margin-right: auto;
+}
+
+header .socialNetworkNavBar .socialNetworkNav img:hover {
+
+    opacity:0.5;
+
+}
+
+/* Main Content sections */
+
+.mainContent .contactData {
+
+	display: block;
+
+}
+
+.contactData .sectionTitle, .commentSection .sectionTitle {
+
+	font-family: 'Montserrat', sans-serif;
+
+	color: rgba(146,146,146,1.00);
+
+	font-size: 18px;
+
+	font-weight: 700;
+
+	text-transform: uppercase;
+
+}
+
+.contactData .sectionTitleRule, .commentSection .sectionTitleRule {
+
+	margin: 0 3% 0 0;
+
+	float: left;
+
+	clear: both;
+
+}
+
+.contactData .sectionTitleRule2, .commentSection .sectionTitleRule2 {
+
+	background-color: rgba(208,207,207,1.00);
+
+	height: 1px;
+
+	padding: 0px;
+
+}
+
+.mainContent .contactData .contactDataContent {
+
+	font-family: ProximaNova;
+
+	font-size: 14px;
+
+	font-weight: 100;
+
+	color: rgba(208,207,207,1.00);
+
+}
+
+.mainContent .contactData .contactDataContent span {
+
+	color: rgba(146,146,146,1.00);
+
+	font-family: sans-serif;
+
+}
+
+.commentSection .sectionContentTitle {
+
+	font-family: sans-serif;
+
+	color: rgba(146,146,146,1.00);
+
+	font-size: 18px;
+
+	font-weight: 700;
+
+}
+
+
+
+.commentSection .sectionContentSubTitle {
+
+	font-family: sans-serif;
+
+	color: rgba(68,67,67,1.00);
+
+	font-size: 14px;
+
+	font-weight: 400;
+
+}
+
+.commentSection .sectionContent {
+
+	font-family: sans-serif;
+
+	color: rgba(146,146,146,1.00);
+
+	font-size: 14px;
+
+	font-weight: 400;
+
+	line-height: 1.8;
+
+}
+
+.commentSection ol li:nth-child(even) {
+	background-color: #f6f6f6;
+}
+
+.commentSection ol li:nth-child(odd) {
+	background-color: #e9e9e9;
+}
+
+.mainContent {
+
+	display: block;
+
+}
+
+.mainContent .externalResourcesNav .externalResources {
+
+	background-color: rgba(208,207,207,1.00);
+
+	display: inline-block;
+
+	text-align: center;
+
+	margin-top: 0px;
+
+	padding-top: 3%;
+
+	cursor: pointer;
+
+}
+
+.mainContent .externalResourcesNav .externalResources:hover {
+
+	background-color: rgba(153,153,153,1.00);
+
+}
+
+.externalResourcesNav .externalResources a {
+
+	font-family: 'Montserrat', sans-serif;
+
+	color: rgba(255,255,255,1.00);
+
+	font-size: 14px;
+
+	font-weight: 400;
+
+	line-height: 18px;
+
+	text-decoration: none;
+
+	display: inline-block;
+
+	width: 100%;
+
+	height: 100%;
+}
+
+.stretch {
+
+	content: '';
+
+	display: inline-block;
+
+	margin-left: 2%;
+
+	margin-right: 2%;
+
+}
+
+/* Footer */
+
+footer .footerDisclaimer {
+
+	font-family: sans-serif;
+
+	font-size: 14px;
+
+	line-height: 18px;
+
+	color: rgba(104,103,103,1.00);
+
+	font-weight: 700;
+
+}
+
+footer .footerDisclaimer span {
+
+	color: rgba(181,178,178,1.00);
+
+	font-weight: 400;
+
+}
+
+footer .footerNote {
+
+	font-family: sans-serif;
+
+	font-size: 14px;
+
+	line-height: 18px;
+
+	color: rgba(104,103,103,1.00);
+
+	font-weight: 700;
+
+}
+
+footer .footerNote span {
+
+	color: rgba(181,178,178,1.00);
+
+	font-weight: 400;
+
+}
+
+textarea {
+   resize: none;
+	 font-family: sans-serif;
+}
+
+/* Media query for Mobile devices*/
+
+@media only screen and (min-width : 285px) and (max-width : 480px) {
+
+/* Header */
+
+header {
+
+	width: 100%;
+
+	float: none;
+}
+
+header .profileLogo .logoPlaceholder {
+
+	display: inline-block;
+
+}
+
+header .mainPhoto {
+
+	display: inline-block;
+
+	margin-top: 1%;
+}
+
+header .profileHeader {
+
+	text-align: center;
+
+    margin-top:10%;
+
+}
+
+header .profileHeader p {
+
+	text-align: justify;
+
+}
+
+header .socialNetworkNavBar {
+
+    text-align: center;
+
+    display: block;
+
+    margin-top: 60px;
+
+    clear: both;
+
+    margin-bottom: 15%;
+
+}
+
+header .socialNetworkNavBar .socialNetworkNav {
+
+	width: 60px;
+
+	height: 60px;
+
+	display: inline-block;
+
+	margin-right: 23px;
+
+}
+
+#cookiebar {
+	padding: 5px;
+
+	top: 0;
+
+	left: 0;
+	width: 100%;
+	height: auto;
+	min-height: 60px;
+
+	background-color: rgba(146,146,146,1.00);
+
+	text-align: center;
+	visibility: none;
+}
+
+#cookiebar .cookieDisclaimer {
+	font-family: sans-serif;
+
+	font-size: 14px;
+	color: black;
+	font-weight: 700;
+	opacity: 1;
+	display:inline-block;
+}
+
+#cookiebar .cookieYes {
+	background: #4aaaa5;
+}
+
+#cookiebar .cookieNo {
+	background: #adadad;
+}
+
+/* Main content sections */
+
+.mainContent .contactData {
+
+	text-align: center;
+
+    margin-bottom: 10%;
+
+}
+
+.contactData .section1Title, .commentSection .section1Title {
+
+	text-align: center;
+
+}
+
+.contactData .sectionTitleRule, .commentSection .sectionTitleRule {
+
+	width: 100%;
+
+}
+
+.contactData .sectionTitleRule2, .commentSection .sectionTitleRule2 {
+
+	display: none;
+
+}
+
+.mainContent .contactData .contactDataContent {
+
+	display: inline-block;
+
+	text-align: left;
+
+	font-family: sans-serif;
+
+    text-align: justify;
+
+}
+
+.mainContent .commentSection {
+
+	display: block;
+
+	text-align: center;
+
+}
+
+.commentSection .commentSectionContent {
+
+    margin-top: 10%;
+
+    text-align: justify;
+
+    margin-bottom: 10%;
+}
+
+.commentSection ol {
+	padding-top: 1%;
+	padding-left: 0px;
+}
+
+.commentSection ol li {
+	margin-left: 0%;
+	margin-top: 1%;
+	list-style-type: none;
+	border-radius: 5px;
+	width: inherit;
+	text-align: left;
+}
+
+.commentSection ol li .comment {
+	font-family: sans-serif;
+	font-size: 14px;
+	color: rgba(51,51,51,1.00);
+}
+
+.commentSection ol li .comment .entry-content {
+	padding-left: 1%;
+	padding-top: 1%;
+	padding-right: 20%;
+}
+
+.commentSection ol li .comment footer {
+	padding-left: 67%;
+	padding-bottom: 1%;
+}
+
+#unameDiv {
+	padding-bottom: 1%;
+}
+
+#ctextDiv {
+	padding-bottom: 1%;
+}
+
+#ctextInputDiv {
+	padding-bottom: 1%;
+	width: 100%;
+	padding-left: 0%;
+}
+
+#ctextInputDiv textarea {
+	width: 100%;
+}
+
+.mainContent .externalResourcesNav {
+
+    margin-bottom: 10%;
+}
+
+.mainContent .externalResourcesNav .externalResources {
+
+	width: 100%;
+
+	height: 35px;
+
+}
+
+/* Footer */
+
+footer {
+
+	display: block;
+
+	text-align: center;
+
+	font-family: sans-serif;
+
+}
+
+}
+
+
+
+/* Media Query for Tablets */
+
+@media only screen and (min-width : 481px) and (max-width : 1024px) {
+
+/* Header */
+
+header {
+
+	width: 100%;
+
+	float: none;
+
+}
+
+header .profileLogo .logoPlaceholder {
+
+	display: inline-block;
+
+	font-family: 'Montserrat', sans-serif;
+
+}
+
+header .mainPhoto {
+
+	float: left;
+
+	clear: both;
+
+	margin-right: 3%;
+
+    margin-top:5%;
+
+}
+
+header .profileHeader {
+
+	text-align: left;
+
+    margin-top:7%;
+
+}
+
+header .socialNetworkNavBar .socialNetworkNav {
+
+	width: 74px;
+
+	height: 74px;
+
+	display: inline-block;
+
+	margin-right: 23px;
+
+}
+
+/* cookiebar */
+
+#cookiebar {
+	padding: 5px;
+
+	top: 0;
+
+	left: 0;
+	width: 100%;
+	height: auto;
+	min-height: 60px;
+
+	background-color: rgba(146,146,146,1.00);
+
+	text-align: center;
+	visibility: none;
+}
+
+#cookiebar .cookieDisclaimer {
+	font-family: sans-serif;
+
+	font-size: 14px;
+	color: black;
+	font-weight: 700;
+	opacity: 1;
+	display:inline-block;
+}
+
+#cookiebar .cookieYes {
+	background: #4aaaa5;
+}
+
+#cookiebar .cookieNo {
+	background: #adadad;
+}
+
+/* Main content and sections */
+
+.contactData .section1Title, .commentSection .section1Title {
+
+	text-align: center;
+
+}
+
+.contactData .sectionTitleRule, .commentSection .sectionTitleRule {
+
+	width: 100%;
+
+}
+
+.contactData .sectionTitleRule2, .commentSection .sectionTitleRule2 {
+
+	display: none;
+
+}
+
+.mainContent .contactData .contactDataContent {
+
+	display: block;
+
+	margin: 0% 0% 0% 20%;
+
+	font-family: sans-serif;;
+
+    margin-top: 5%;
+
+    margin-bottom: 5%;
+
+}
+
+.mainContent .commentSection {
+
+	clear: both;
+
+}
+
+.commentSection .commentSectionContent {
+
+	padding: 0px;
+
+	margin-left: 10%;
+
+	font-family: sans-serif;
+
+    margin-top: 5%;
+
+    margin-bottom: 5%;
+
+}
+
+.commentSection ol {
+	padding-top: 1%;
+	padding-left: 0px;
+}
+
+.commentSection ol li {
+	margin-left: 10%;
+	margin-top: 1%;
+	list-style-type: none;
+	border-radius: 5px;
+	width: inherit;
+}
+
+.commentSection ol li .comment {
+	font-family: sans-serif;
+	font-size: 14px;
+	color: rgba(51,51,51,1.00);
+}
+
+.commentSection ol li .comment .entry-content {
+	padding-left: 1%;
+	padding-top: 1%;
+	padding-right: 20%;
+}
+
+.commentSection ol li .comment footer {
+	padding-left: 67%;
+	padding-bottom: 1%;
+}
+
+#unameDiv {
+	padding-bottom: 1%;
+}
+
+#ctextDiv {
+	padding-bottom: 1%;
+}
+
+#ctextInputDiv {
+	padding-bottom: 1%;
+	width: 100%;
+	padding-left: 0%;
+}
+
+#ctextInputDiv textarea {
+	width: 100%;
+	height: 100%;
+}
+
+.mainContent .externalResourcesNav {
+
+	margin-left: 20%;
+
+	margin-top: 40px;
+
+	margin-bottom: 40px;
+
+	text-align: center;
+
+	padding-top: 0px;
+
+	clear: both;
+
+}
+
+.mainContent .externalResourcesNav .externalResources {
+
+	width: 199px;
+
+	height: 48px;
+
+    margin-top: 5%;
+
+}
+
+/* Footer */
+
+footer .footerDisclaimer {
+
+	float: left;
+
+	margin-left: 3%;
+
+	font-family: sans-serif;
+
+}
+
+footer .footerNote {
+
+	float: right;
+
+	margin-right: 3%;
+
+	font-family: sans-serif;
+
+}
+
+}
+
+
+
+/* Desktops and laptops  */
+
+@media only screen and (min-width:1025px) {
+
+/* Header */
+
+header .profileLogo .logoPlaceholder {
+
+	float: left;
+
+	margin-bottom: 50px;
+
+}
+
+header .mainPhoto {
+
+	float: left;
+
+	clear: both;
+
+	margin-right: 3%;
+
+}
+
+header .profileHeader {
+
+	text-align: left;
+
+	padding-top: 10%;
+
+}
+
+header .socialNetworkNavBar .socialNetworkNav {
+
+	width: 74px;
+
+	height: 74px;
+
+	display: inline-block;
+
+	margin-right: 23px;
+
+}
+
+/* cookiebar */
+
+#cookiebar {
+	position: fixed;
+
+	padding: 5px;
+
+	top: 0;
+
+	left: 0;
+
+	width: 100%;
+
+	height: 60px;
+
+	background-color: rgba(146,146,146,1.00);
+
+	text-align: center;
+
+	visibility: none;
+}
+
+#cookiebar .cookieDisclaimer {
+	font-family: sans-serif;
+
+	font-size: 14px;
+
+	line-height: 5px;
+
+	color: black;
+
+	font-weight: 700;
+
+	opacity: 1;
+
+	display:inline-block;
+}
+
+#cookiebar .cookieYes {
+	background: #4aaaa5;
+}
+
+#cookiebar .cookieNo {
+	background: #adadad;
+}
+
+/* Main content sections */
+
+.contactData .sectionTitleRule, .commentSection .sectionTitleRule {
+
+	width: 22.5%;
+
+}
+
+.mainContent .contactData .contactDataContent {
+
+	display: block;
+
+	margin-top: 0%;
+
+	margin-right: 0%;
+
+	margin-left: 26%;
+
+	margin-bottom: 0%;
+
+	font-family: sans-serif;
+
+}
+
+.mainContent .commentSection {
+
+	clear: both;
+
+}
+
+.commentSection .commentSectionContent {
+
+	padding: 0px;
+
+	margin-left: 26%;
+
+	font-family: sans-serif;
+
+}
+
+.commentSection ol {
+
+	padding-left: 0px;
+}
+
+.commentSection ol li {
+	margin-left: 26%;
+	margin-top: 1%;
+	list-style-type: none;
+	border-radius: 5px;
+	width: inherit;
+}
+
+.commentSection ol li .comment {
+	font-family: sans-serif;
+	font-size: 14px;
+	color: rgba(51,51,51,1.00);
+}
+
+.commentSection ol li .comment .entry-content {
+	padding-left: 1%;
+	padding-top: 1%;
+	padding-right: 20%;
+}
+
+.commentSection ol li .comment footer {
+	padding-left: 67%;
+	padding-bottom: 1%;
+}
+
+#unameDiv {
+	padding-bottom: 1%;
+}
+
+#ctextDiv {
+	padding-bottom: 1%;
+}
+
+#ctextInputDiv {
+	padding-bottom: 2%;
+	width: 60%;
+	padding-left: 0%;
+	height: 150px;
+}
+
+#ctextInputDiv textarea {
+	width: 100%;
+	height: 100%;
+}
+
+.mainContent .externalResourcesNav {
+
+	margin-top: 40px;
+
+	margin-bottom: 40px;
+
+	text-align: center;
+
+	padding-top: 0px;
+
+	clear: both;
+}
+
+.mainContent .externalResourcesNav .externalResources {
+
+	width: 199px;
+
+	height: 48px;
+
+}
+
+/* Footer */
+
+footer .footerDisclaimer {
+
+	float: left;
+
+	margin-left: 3%;
+
+	font-family: sans-serif;
+
+}
+
+footer .footerNote {
+
+	float: right;
+
+	margin-right: 3%;
+
+	font-family: sans-serif;
+
+}
+
+}

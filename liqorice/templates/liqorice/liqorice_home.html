@@ -1,0 +1,97 @@
+{% load static %}
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Roeiershuis Liqorice</title>
+<link href="{% static 'css/liqorice.css' %}" rel="stylesheet" type="text/css">
+
+<script src="https://use.edgefonts.net/montserrat:n4:default;source-sans-pro:n2:default.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="{% static 'js/js.js' %}" type="text/javascript"></script>
+</head>
+
+<body>
+<header>
+  <div class="mainPhoto">
+    <img src="{% static 'images/logoSmall.png' %}">
+  </div>
+  <section class="profileHeader">
+    <h1>Roeiershuis Liqorice</h1>
+    <h3>Het eerste Thêta-huis</h3>
+    <hr>
+    <p>In het, net buiten de ring gelegen, pittoreske Groenewoud staat een huis, waarvan de bewoners al jaren het gemiddelde IQ van de medebuurtbewoners significant doet stijgen. Dit huis, beter bekend als het Roeiershuis Liqorice ( Waar menig held geboren is!) staat bekend om haar Droppendrank, dat steevast elke ochtend door de huisfeut wordt bereid naar geheim recept. Deze droppendrank zorgt voor grote prestaties op roeigebied en leidt tot vele succesvolle huisinnovaties (maar soms ook niet...)</p>
+  </section>
+  <aside class="socialNetworkNavBar">
+    <div class="socialNetworkNav">
+      <img src="{% static 'images/schild.jpg' %}" width="inherit" alt="Schild"> </div>
+    <div class="socialNetworkNav">
+      <img src="{% static 'images/bart.jpg' %}"  alt="Bart"> </div>
+    <div class="socialNetworkNav">
+      <img src="{% static 'images/group.jpg' %}"  alt="Group"> </div>
+    <div class="socialNetworkNav">
+      <img src="{% static 'images/wouter.jpg' %}"  alt="Wouter"> </div>
+  </aside>
+</header>
+<section class="mainContent">
+  <section class="contactData">
+    <h2 class="sectionTitle">Contactgegevens</h2>
+    <hr class="sectionTitleRule">
+    <hr class="sectionTitleRule2">
+    <div class="contactDataContent">
+      <p><span>Email :</span> liqorice@esrtheta.nl</p>
+      <p><span>Website :</span> liqorice.com</p>
+      <p><span>Phone :</span> 040-298 39 48</p>
+      <p><span>Address :</span> Ampèrestraat 103, 5621AN, Eindhoven</p>
+    </div>
+  </section>
+  <section class="commentSection">
+    <h2 class="sectionTitle">Reacties</h2>
+    <hr class="sectionTitleRule">
+    <hr class="sectionTitleRule2">
+    <ol>
+      {% for comment in comments %}
+      <li id="{{ comment.id }}"><article class="comment">
+        <div class="entry-content">
+          <p>{{ comment.content }}</p>
+        </div>
+
+        <footer class="post-info">
+          <abbr class="published" title="{{ comment.post_date }}">
+            {{ comment.post_date }}
+          </abbr>
+
+          <address class="vcard author">
+            By <a class="url fn" href="#">{{ comment.author }}</a>
+          </address>
+        </footer>
+      </article></li>
+      {% endfor %}
+    </ol>
+    {% if user.is_authenticated %}
+    <form method="POST" class="commentSectionContent">{% csrf_token %}
+      <h2 class="sectionContentTitle">Laat een reactie achter</h2>
+      <div id="unameDiv">Naam: {{ user.username }}</div>
+      <div id="ctextDiv">Reactie: </div>
+      <div id="ctextInputDiv">{{ form.content }}</div>
+      <button type="submit" class="save btn btn-default">Reageer</button>
+    </article>
+    {% endif %}
+  </section>
+  <hr>
+  <aside class="externalResourcesNav">
+    <div class="externalResources"><a href="https://github.com/Frisoso/2ID60/archive/master.zip" title="Download Source">DOWNLOAD SOURCE</a> </div>
+    <span class="stretch"></span>
+    <div class="externalResources"><a href="https://github.com/Frisoso/2ID60" title="GitHub">GITHUB</a> </div>
+    <span class="stretch"></span>
+    <div class="externalResources"><a href="https://www.esrtheta.nl" title="E.S.R. Thêta">E.S.R. THETA</a> </div>
+  </aside>
+</section>
+<footer>
+  <hr>
+  <p class="footerDisclaimer">2017  Copyrights - <span>All Rights Reserved</span></p>
+  <p class="footerNote">Friso Buurman - <span><a href="mailto:info@frisobuurman.nl">Email me</span></p>
+</footer>
+</body>
+</html>
