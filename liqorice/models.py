@@ -12,5 +12,7 @@ class Comment(models.Model):
     post_date = models.DateTimeField(default=timezone.now)
     content = models.TextField()
 
+    owner = models.ForeignKey('auth.User', related_name='comments', on_delete=models.CASCADE)
+
     def __str__(self):
         return self.content

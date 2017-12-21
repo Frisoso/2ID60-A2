@@ -2,18 +2,24 @@
 
 <!doctype html>
 <html>
-<head>
-<meta charset="utf-8">
-<title>Roeiershuis Liqorice</title>
-<link href="{% static 'css/liqorice.css' %}" rel="stylesheet" type="text/css">
+  <head>
+    <meta charset="utf-8">
+    <title>Roeiershuis Liqorice</title>
+    <link href="{% static 'css/liqorice.css' %}" rel="stylesheet" type="text/css">
 
-<script src="https://use.edgefonts.net/montserrat:n4:default;source-sans-pro:n2:default.js" type="text/javascript"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="{% static 'js/js.js' %}" type="text/javascript"></script>
-</head>
-
+    <script src="https://use.edgefonts.net/montserrat:n4:default;source-sans-pro:n2:default.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="{% static 'js/js.js' %}" type="text/javascript"></script>
+  </head>
 <body>
 <header>
+  {% if messages %}
+  <div id="alertBar">
+    {% for message in messages %}
+      <p id="alertNote" class="{% if message.tags %}{{ message.tags }}{% endif %}">{{ message }}</p>
+    {% endfor %}
+  </div>
+  {% endif %}
   <div class="mainPhoto">
     <img src="{% static 'images/logoSmall.png' %}">
   </div>
@@ -63,20 +69,23 @@
           </abbr>
 
           <address class="vcard author">
-            By <a class="url fn" href="#">{{ comment.author }}</a>
+            By <a class="url fn" href="/users/{{ comment.owner_id }}">{{ comment.author }}</a>
           </address>
         </footer>
       </article></li>
       {% endfor %}
+      {% if not user.is_authenticated %}
+      <li><form action="/login"><input type="submit" value="Log in" class="login_button" />om je eigen comments te plaatsen!</form></li>
+      {% endif %}
     </ol>
     {% if user.is_authenticated %}
     <form method="POST" class="commentSectionContent">{% csrf_token %}
       <h2 class="sectionContentTitle">Laat een reactie achter</h2>
-      <div id="unameDiv">Naam: {{ user.username }}</div>
+      <div id="unameDiv">Naam: {{ user.username }} (<a href='/logout'>log uit</a>)</div>
       <div id="ctextDiv">Reactie: </div>
       <div id="ctextInputDiv">{{ form.content }}</div>
       <button type="submit" class="save btn btn-default">Reageer</button>
-    </article>
+    </form>
     {% endif %}
   </section>
   <hr>
