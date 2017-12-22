@@ -14,7 +14,8 @@ from .forms import CommentForm
 
 # Create your views here.
 class HomePage(APIView):
-    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
+    permission_classes = (permissions.DjangoModelPermissionsOrAnonReadOnly,)
+    queryset = Comment.objects.none()
 
     def get(self, request, format=None):
         comments = Comment.objects.filter(
@@ -37,7 +38,8 @@ class HomePage(APIView):
         return Response(form.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class CommentList(APIView):
-    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
+    permission_classes = (permissions.DjangoModelPermissionsOrAnonReadOnly,)
+    queryset = Comment.objects.none()
 
     def get(self, request, format=None):
         comments = Comment.objects.all()
@@ -52,32 +54,47 @@ class CommentList(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     def delete(self, request, format=None):
+        if not request.user.is_superuser:
+            return Response(status=status.HTTP_403_FORBIDDEN)
         Comment.objects.all().delete();
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 class CommentDetail(APIView):
-    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
+    permission_classes = (permissions.DjangoModelPermissionsOrAnonReadOnly,)
+    queryset = Comment.objects.none()
 
     def get(self, request, id, format=None):
-        comment = get_object_or_404(Comment, id=id)
+        comment = Comment.objects.filter(id=id)
+        if not comment.count() > 0:
+            return Response(status=status.HTTP_404_NOT_FOUND)
         serializer = CommentSerializer(comment)
         return Response(serializer.data)
 
     def delete(self, request, id, format=None):
-        comment = get_object_or_404(Comment, id=id)
+        comment =  Comment.objects.filter(id=id)
+        print(comment.first().owner)
+        if comment.first().owner != request.user and not request.user.is_staff:
+            return Response(status=status.HTTP_403_FORBIDDEN)
         if comment.count() > 0:
-            comment.delete();
+            comment.delete()
             return Response(status=status.HTTP_204_NO_CONTENT)
         return Response(status=status.HTTP_404_NOT_FOUND)
 
 class UserList(generics.ListAPIView):
+    permission_classes = (permissions.IsAdminUser,)
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
+class UserDetail(APIView):
+    permission_classes = (permissions.DjangoModelPermissionsOrAnonReadOnly,)
+    queryset = User.objects.none()
 
-class UserDetail(generics.RetrieveAPIView):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
+    def get(self, request, id, format=None):
+        if int(id) != request.user.id and not request.user.is_staff:
+            return Response(status=status.HTTP_403_FORBIDDEN)
+        queryset = get_object_or_404(User, id=id)
+        serializer = UserSerializer(queryset)
+        return Response(serializer.data)
 
 def custom_login(request, *args, **kwargs):
     response = login(request, *args, **kwargs)
