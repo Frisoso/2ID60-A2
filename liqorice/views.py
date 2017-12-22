@@ -65,20 +65,16 @@ class CommentDetail(APIView):
 
     def get(self, request, id, format=None):
         comment = get_object_or_404(Comment, id=id)
-        if not comment:
-            return Response(status=status.HTTP_404_NOT_FOUND)
         serializer = CommentSerializer(comment)
         return Response(serializer.data)
 
     def delete(self, request, id, format=None):
         comment =  get_object_or_404(Comment, id=id)
-        print(comment.first().owner)
-        if comment.first().owner != request.user and not request.user.is_staff:
+        print(comment.owner)
+        if comment.owner != request.user and not request.user.is_staff:
             return Response(status=status.HTTP_403_FORBIDDEN)
-        if comment.count() > 0:
-            comment.delete()
-            return Response(status=status.HTTP_204_NO_CONTENT)
-        return Response(status=status.HTTP_404_NOT_FOUND)
+        comment.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
 
 class UserList(generics.ListAPIView):
     permission_classes = (permissions.IsAdminUser,)
