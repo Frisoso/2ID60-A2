@@ -8,7 +8,7 @@ name = "pypi"
 [packages]
 
 dj-database-url = "==0.4.2"
-django = "==1.11.8"
+django = "==1.11.28"
 djangorestframework = "==3.7.3"
 google-api-python-client = "==1.6.4"
 gunicorn = "==19.7.1"
