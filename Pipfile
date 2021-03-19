@@ -9,7 +9,7 @@ name = "pypi"
 
 dj-database-url = "==0.4.2"
 django = "==1.11.8"
-djangorestframework = "==3.7.3"
+djangorestframework = "==3.11.2"
 google-api-python-client = "==1.6.4"
 gunicorn = "==19.7.1"
 "httplib2" = "==0.10.3"
